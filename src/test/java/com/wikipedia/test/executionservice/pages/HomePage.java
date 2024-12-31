@@ -1,12 +1,12 @@
 package com.wikipedia.test.executionservice.pages;
 
-import static io.appium.java_client.AppiumBy.accessibilityId;
-import static io.appium.java_client.AppiumBy.androidUIAutomator;
+import static io.appium.java_client.AppiumBy.*;
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
 import io.appium.java_client.AppiumDriver;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.springframework.stereotype.Component;
 
 @Log4j2
@@ -25,6 +25,8 @@ public class HomePage extends BasePage {
   final By historyBtn = accessibilityId("History");
   final By nearbyBtn = accessibilityId("Nearby");
   final By exploreBtn = accessibilityId("Explore");
+  final By searchBarBtn = id("search_container");
+  final By wikipediaWordmark = id("single_fragment_toolbar_wordmark");
 
   public void scrollToEnd() {
     wait.until(presenceOfElementLocated(scrollToEnd));
@@ -48,5 +50,18 @@ public class HomePage extends BasePage {
 
   public void clickExploreBtn() {
     click(exploreBtn);
+  }
+
+  public void clickSearchBar() {
+    click(searchBarBtn);
+  }
+
+  public boolean isWikipediaWordmarkDisplayed() {
+    try {
+      findElement(wikipediaWordmark);
+      return true;
+    } catch (NoSuchElementException e) {
+      return false;
+    }
   }
 }
