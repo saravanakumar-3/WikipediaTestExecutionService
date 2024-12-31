@@ -5,4 +5,5 @@ logging:
 
 automation:
   url: http://127.0.0.1:4723
-  udid: "emulator-5554"
+  udid: emulator-5554
+  platformVersion: 12

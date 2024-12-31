@@ -17,6 +17,9 @@ public class AppiumDriverConfig {
   @Value("${automation.udid}")
   String udid;
 
+  @Value("${automation.platformVersion}")
+  String platformVersion;
+
   @Bean
   @ScenarioScope
   public AppiumDriver getAppiumDriver() {
@@ -26,7 +29,7 @@ public class AppiumDriverConfig {
             .amend("appPackage", "org.wikipedia.alpha")
             .amend("appActivity", "org.wikipedia.main.MainActivity")
             .amend("platformName", "Android")
-            .amend("platformVersion", "12")
+            .amend("platformVersion", platformVersion)
             .amend("automationName", "uiautomator2");
     return new AndroidDriver(url, options);
   }
