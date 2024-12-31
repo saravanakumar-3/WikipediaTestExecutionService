@@ -18,6 +18,7 @@ public class BasePage {
   }
 
   protected WebElement findElement(By by) {
+    wait.until(ExpectedConditions.presenceOfElementLocated(by));
     return driver.findElement(by);
   }
 
@@ -26,7 +27,6 @@ public class BasePage {
   }
 
   protected void click(By by) {
-    wait.until(ExpectedConditions.presenceOfElementLocated(by));
     findElement(by).click();
   }
 

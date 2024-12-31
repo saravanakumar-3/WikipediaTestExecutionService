@@ -27,6 +27,8 @@ public class HomePage extends BasePage {
   final By exploreBtn = accessibilityId("Explore");
   final By searchBarBtn = id("search_container");
   final By wikipediaWordmark = id("single_fragment_toolbar_wordmark");
+  final By menuBtn = id("menu_overflow_button");
+  final By settingsBtn = id("explore_overflow_settings");
 
   public void scrollToEnd() {
     wait.until(presenceOfElementLocated(scrollToEnd));
@@ -63,5 +65,13 @@ public class HomePage extends BasePage {
     } catch (NoSuchElementException e) {
       return false;
     }
+  }
+
+  public void clickMenuBtn() {
+    click(menuBtn);
+  }
+
+  public void clickSettingsBtn() {
+    click(settingsBtn);
   }
 }

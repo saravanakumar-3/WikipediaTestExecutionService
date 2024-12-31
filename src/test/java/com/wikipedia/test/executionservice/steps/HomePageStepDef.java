@@ -1,7 +1,5 @@
 package com.wikipedia.test.executionservice.steps;
 
-import static org.hamcrest.CoreMatchers.*;
-
 import com.wikipedia.test.executionservice.pages.HomePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -14,8 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class HomePageStepDef extends BaseStepDef {
   @Autowired HomePage homepage;
 
-  @Given("User scroll to the End of the Explore page")
-  public void scrollToTheEndOfTheExplorePage() {
+  @Given("User scroll to the End of the Home page")
+  public void scrollToTheEndOfTheHomePage() {
     homepage.scrollToEnd();
   }
 
@@ -29,13 +27,19 @@ public class HomePageStepDef extends BaseStepDef {
     waitTill(3);
   }
 
-  @Then("User navigate to Explore page")
-  public void userNavigateToExplorePage() {
+  @Then("User navigate to Home page")
+  public void userNavigateToHomePage() {
     homepage.clickExploreBtn();
   }
 
-  @And("User scroll to the Beginning of the Explore page")
-  public void userScrollToTheBeginningOfTheExplorePage() {
+  @And("User scroll to the Beginning of the Home page")
+  public void userScrollToTheBeginningOfTheHomePage() {
     homepage.scrollToBeginning();
+  }
+
+  @Given("User clicks on Settings in Menu")
+  public void userClicksOnSettingsInMenu() {
+    homepage.clickMenuBtn();
+    homepage.clickSettingsBtn();
   }
 }

@@ -43,8 +43,8 @@ public class SearchPageStepDef extends BaseStepDef {
     assertThat(searchPage.getSearchText(), is("Search…"));
   }
 
-  @And("User click on close search button to return to Explore page")
-  public void userClickOnCloseSearchButtonToReturnToExplorePage() {
+  @And("User click on close search button to return to Home page")
+  public void userClickOnCloseSearchButtonToReturnToHomePage() {
     searchPage.clickSearchCloseBtn();
     assertThat(homepage.isWikipediaWordmarkDisplayed(), is(true));
   }
