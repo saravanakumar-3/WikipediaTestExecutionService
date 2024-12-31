@@ -22,13 +22,12 @@ public class AppiumDriverConfig {
   public AppiumDriver getAppiumDriver() {
     BaseOptions options =
         new BaseOptions()
-            .amend("udid", "emulator-5554")
+            .amend("udid", udid)
             .amend("appPackage", "org.wikipedia.alpha")
             .amend("appActivity", "org.wikipedia.main.MainActivity")
             .amend("platformName", "Android")
-            .amend("platformVersion", "10")
+            .amend("platformVersion", "12")
             .amend("automationName", "uiautomator2");
-    System.out.println(udid);
     return new AndroidDriver(url, options);
   }
 }

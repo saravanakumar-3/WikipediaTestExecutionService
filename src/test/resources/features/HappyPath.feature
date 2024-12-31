@@ -1,5 +1,8 @@
-Feature: Happy path of Juice-Shop
+Feature: Happy path of Wikipedia
 
-  @SmokeTest
-  Scenario: Validate items per page functionality in HomePage
-    Given User navigates to Home page
+  @SmokeTest @Task1
+  Scenario: Validate My lists, History and Nearby buttons
+    Given User scroll to the End of the Explore page
+    When User clicks on My lists, History and Nearby buttons
+    Then User navigate to Explore page
+    And User scroll to the Beginning of the Explore page
