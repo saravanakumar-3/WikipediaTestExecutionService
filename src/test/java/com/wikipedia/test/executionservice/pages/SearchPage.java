@@ -7,7 +7,6 @@ import io.appium.java_client.AppiumDriver;
 import java.util.List;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.springframework.stereotype.Component;
 
 @Log4j2

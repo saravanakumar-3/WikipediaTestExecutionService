@@ -26,6 +26,5 @@ public class SettingsPage extends BasePage {
 
   public void clickNavigateUpBtn() {
     click(navigateUp);
-
   }
 }
